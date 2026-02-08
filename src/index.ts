@@ -13,9 +13,9 @@ export {
   IReduxLogout,
   IAuthResponse,
   IAuthUser,
-} from './interfaces/auth.interface';
+} from './auth.interface';
 
-export { IBuyerDocument, IReduxBuyer } from './interfaces/buyer.interface';
+export { IBuyerDocument, IReduxBuyer } from './buyer.interface';
 
 export {
   IConversationDocument,
@@ -25,7 +25,7 @@ export {
   IChatSellerProps,
   IChatBuyerProps,
   IChatMessageProps,
-} from './interfaces/chat.interface';
+} from './chat.interface';
 
 export {
   GigType,
@@ -38,7 +38,7 @@ export {
   IGigViewReviewsProps,
   IGigInfo,
   IGigTopProps,
-} from './interfaces/gig.interface';
+} from './gig.interface';
 
 export {
   IOrderNotifcation,
@@ -49,7 +49,7 @@ export {
   IOrderReview,
   IOrderMessage,
   IOrderDocument,
-} from './interfaces/order.interface';
+} from './order.interface';
 
 export {
   IReviewMessageDetails,
@@ -57,7 +57,7 @@ export {
   IRatingCategories,
   IRatingCategoryItem,
   IReviewDocument,
-} from './interfaces/review.interface';
+} from './review.interface';
 
 export {
   ISearchResult,
@@ -66,7 +66,7 @@ export {
   IQueryString,
   ITerm,
   IPaginateProps,
-} from './interfaces/search.interface';
+} from './search.interface';
 
 export {
   SellerType,
@@ -75,9 +75,9 @@ export {
   IEducation,
   ICertificate,
   ISellerDocument,
-} from './interfaces/seller.interface';
+} from './seller.interface';
 
-export { IEmailLocals } from './interfaces/email.interface';
+export { IEmailLocals } from './email.interface';
 
 export {uploadPhoto, uploadVideo} from './cloudinary-upload'
 
@@ -95,7 +95,7 @@ export {
 
 export {verifyGatewayRequest} from './gateway-middleware'
 
-export {winstonLogger} from './interfaces/logger'
+export {winstonLogger} from './logger'
 
 export {
     firstLetterUppercase,
@@ -103,4 +103,4 @@ export {
     toUpperCase,
     isEmail,
     isDataURL
-} from './interfaces/helpers'
+} from './helpers'
