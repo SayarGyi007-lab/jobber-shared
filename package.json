@@ -1,5 +1,5 @@
 {
-  "version": "0.0.15",
+  "version": "0.0.16",
   "license": "MIT",
   "main": "build/cjs/index.js",
   "types": "./src/index.d.ts",
@@ -29,13 +29,12 @@
     "registry": "https://npm.pkg.github.com"
   },
   "files": [
-    "build",
-    "src"
+    "build"
   ],
   "exports": {
     ".": {
-      "import": "./src/index.js",
-      "require": "./src/index.js"
+      "import": "./build/esm/index.js",
+      "require": "./build/cjs/index.js"
     }
   },
   "dependencies": {
