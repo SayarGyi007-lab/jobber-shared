@@ -1,7 +1,7 @@
 {
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
-  "main": "src/index.d.ts",
+  "main": "./src/index.d.ts",
   "description": "Helpers library for Jobber app",
   "engines": {
     "node": ">=20"
