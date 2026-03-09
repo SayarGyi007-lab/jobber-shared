@@ -13,7 +13,7 @@ export function verifyGatewayRequest(req:Request, res:Response, next:NextFunctio
         throw new NotAuthorizedError('No tokne','verifyGatewayRequest():No token')
     }
     try {
-        const decoded = jwt.verify(token,'') as JwtPayload
+        const decoded = jwt.verify(token,'aishjdsadkjhew39ryihfsa3t') as JwtPayload
         if(!decoded){
             throw new NotAuthorizedError('No tokne','verifyGatewayRequest():No token')
         }
