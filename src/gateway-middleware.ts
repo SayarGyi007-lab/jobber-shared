@@ -5,10 +5,10 @@ import { NotAuthorizedError } from "./error-handler"
 const tokens: string[] = ['auth','seller','gig','search','buyer','message','order','review']
 
 export function verifyGatewayRequest(req:Request, res:Response, next:NextFunction):void{
-    if(!req.headers?.gatewayToken){
+    if(!req.headers?.gatewaytoken){
         throw new NotAuthorizedError('Invalid tokne','verifyGatewayRequest():Rquest not coming')
     }
-    const token:string = req.headers?.gatewayToken as string
+    const token:string = req.headers?.gatewaytoken as string
     if(!token){
         throw new NotAuthorizedError('No tokne','verifyGatewayRequest():No token')
     }
