@@ -18,7 +18,7 @@ console.log('Gateway token:', token);
 console.log('Decoded (no verify):', jwt.decode(token));
     try {
         
-        const decoded: {id: string, iat: number} = jwt.verify(token,'DSJFAJSDOFP382238T920IODSAJoifaoshjtqwas') as {id: string, iat: number}
+        const decoded: {id: string, iat: number} = jwt.verify(token,'DSJF;AJSDOFP382238T920IODSAJoifaoshjtqwas') as {id: string, iat: number}
         console.log('Verified payload:', decoded);
         if(!decoded){
             throw new NotAuthorizedError('No tokne','verifyGatewayRequest():No token')
