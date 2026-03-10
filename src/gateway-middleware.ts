@@ -4,7 +4,7 @@ import { NotAuthorizedError } from "./error-handler"
 
 const tokens: string[] = ['auth','seller','gig','search','buyer','message','order','review']
 
-export function verifyGatewayRequest(req:Request, res:Response, next:NextFunction):void{
+export function verifyGatewayRequest(req:Request, _res:Response, next:NextFunction):void{
     if(!req.headers?.gatewaytoken){
         throw new NotAuthorizedError('Invalid tokne','verifyGatewayRequest():Rquest not coming')
     }
@@ -13,7 +13,7 @@ export function verifyGatewayRequest(req:Request, res:Response, next:NextFunctio
         throw new NotAuthorizedError('No tokne','verifyGatewayRequest():No token')
     }
     try {
-        const decoded = jwt.verify(token,'aishjdsadkjhew39ryihfsa3t') as JwtPayload
+        const decoded: {id: string, iat: number} = jwt.verify(token,'DSJF;AJSDOFP382238T920IODSAJoifaoshjtqwas') as {id: string, iat: number}
         if(!decoded){
             throw new NotAuthorizedError('No tokne','verifyGatewayRequest():No token')
         }
