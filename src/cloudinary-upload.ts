@@ -13,13 +13,14 @@ export function uploadPhoto(
             overwrite,
             validate,
             resource_type: 'auto'
-        }
-    ),
+        },
+    
      (error:UploadApiErrorResponse|undefined, result: UploadApiResponse|undefined) => {
         if (error) return reject(error);
         if (!result) return reject(new Error("Upload failed"));
         resolve(result);
       }
+    )
    }
 )         
 }
@@ -38,13 +39,14 @@ export function uploadVideo(
             validate,
             chunk_size: 50000,
             resource_type: 'video'
-        }
-    ),
+        },
+    
      (error:UploadApiErrorResponse|undefined, result: UploadApiResponse|undefined) => {
         if (error) return reject(error);
         if (!result) return reject(new Error("Upload failed"));
         resolve(result);
       }
+    )
    }
 )         
 }
