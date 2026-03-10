@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express"
-import jwt, { JwtPayload } from "jsonwebtoken"
+import jwt from "jsonwebtoken"
 import { NotAuthorizedError } from "./error-handler"
 
 const tokens: string[] = ['auth','seller','gig','search','buyer','message','order','review']
@@ -13,15 +13,16 @@ export function verifyGatewayRequest(req:Request, _res:Response, next:NextFuncti
         throw new NotAuthorizedError('No tokne','verifyGatewayRequest():No token')
     }
     try {
-        const decoded: {id: string, iat: number} = jwt.verify(token,'DSJF;AJSDOFP382238T920IODSAJoifaoshjtqwas') as {id: string, iat: number}
+        const decoded: {id: string, iat: number} = jwt.verify(token,'DSJFAJSDOFP382238T920IODSAJoifaoshjtqwas') as {id: string, iat: number}
         if(!decoded){
             throw new NotAuthorizedError('No tokne','verifyGatewayRequest():No token')
         }
         if(!tokens.includes(decoded.id)){
             throw new NotAuthorizedError('Invalid Token','verifyGatewayRequest():Invalid token')
         }
-        next()
+        
     } catch (error) {
         throw new NotAuthorizedError('Invalid tokne','verifyGatewayRequest():Rquest not coming')
     }
+    next()
 }
